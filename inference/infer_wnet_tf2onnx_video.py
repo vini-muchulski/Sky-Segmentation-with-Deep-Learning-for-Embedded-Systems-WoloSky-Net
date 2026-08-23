@@ -5,11 +5,12 @@ import onnxruntime as ort
 from tqdm import tqdm
 
 # ------------------- CONFIG -------------------
-video_input_path = r"videos_test\videos_unificados_drone.mp4"
+video_input_path = r"video/ufsc_video.mp4"
 
-model_path = r"weights\\v2_W-Net_U2Net_Sam3_320x320_infer.onnx"
+model_path = r"weights/v2_Wolosky_U2Net_Sam3_320x320_infer.onnx"
 
-IMG_SZ = (320, 320)
+#IMG_SZ = (320, 320)
+IMG_SZ = (224, 224)
 #IMG_SZ = (128, 128)
 
 prob_threshold = 0.5
@@ -18,7 +19,10 @@ prob_threshold = 0.5
 # ---------------- ONNX Runtime ----------------
 sess_opts = ort.SessionOptions()
 sess_opts.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE_ALL
-sess = ort.InferenceSession(model_path, sess_opts, providers=["CUDAExecutionProvider","CPUExecutionProvider"])
+available_providers = ort.get_available_providers()
+providers = (  ["CUDAExecutionProvider", "CPUExecutionProvider"] if "CUDAExecutionProvider" in available_providers else ["CPUExecutionProvider"])
+sess = ort.InferenceSession(model_path, sess_opts, providers=providers)
+print(f"ONNX Runtime providers: {sess.get_providers()}")
 input_id = sess.get_inputs()[0].name
 output_id = sess.get_outputs()[0].name  # modelo com saida unica (d0)
 

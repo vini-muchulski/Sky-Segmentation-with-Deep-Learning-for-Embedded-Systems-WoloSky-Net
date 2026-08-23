@@ -7,7 +7,7 @@ from tqdm import tqdm
 
 # ------------------- CONFIG -------------------
 
-video_path = r"videos_test/anduril_swarm.mp4"
+video_path = r"video/ufsc_video.mp4"
 
 model_path = r"weights/Sky_Unet_DeepLab_v1_MobileNetv2_infer.onnx"
 

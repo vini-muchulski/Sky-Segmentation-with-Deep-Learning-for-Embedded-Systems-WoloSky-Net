@@ -1,7 +1,6 @@
-﻿numpy==2.4.2
-opencv-python==4.13.0.92
-torch==2.10.0
-onnxruntime==1.24.1
-tqdm==4.67.3
-matplotlib==3.10.8
-pillow==12.1.1
+﻿seaborn
+opencv-python
+onnxruntime
+tqdm
+matplotlib
+pillow
