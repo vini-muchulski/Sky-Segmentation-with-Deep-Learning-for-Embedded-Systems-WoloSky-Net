@@ -8,23 +8,29 @@ This repository contains training and inference code for sky segmentation models
 - ONNX inference scripts for TensorFlow-trained WNet:
 - `infer_wnet_tf2onnx_image.py` and `infer_wnet_tf2onnx_video.py`.
 - ONNX inference scripts for PyTorch-trained DeepLab (custom normalization):
-- `infer_deeplab_wnet_pytorch2onnx_folder.py` and `infer_deeplab_wnet_pytorch2onnx_video.py`.
+- `infer_deeplab_wnet_pytorch2onnx_image.py` and `infer_deeplab_wnet_pytorch2onnx_video.py`.
 - Model weights and experiment outputs under `weights/` and `training/`.
 
 ## Quick start
 
+Create and activate a virtual environment, then install the dependencies:
+
 ```bash
+python -m venv .venv
+source .venv/bin/activate    # Linux/macOS (Windows: .venv\Scripts\activate)
 pip install -r requirements.txt
 ```
 
-Run one of the scripts inside `inference/` according to your input type (image, video, or folder).
+Run the single-image WNet inference:
+
+```bash
+python inference/infer_wnet_tf2onnx_image.py
+```
+
+Run one of the scripts inside `inference/` according to your input type (image or video).
 
 ## Results
 
-Images below are stored in `docs/docs_imgs_results`:
+Images are stored in `docs/docs_imgs_results`:
 
-![Result 1](docs/docs_imgs_results/result_test_image.png)
-![Result 2](docs/docs_imgs_results/result_processed_image.png)
-![Stacked Drone](docs/docs_imgs_results/result_drone_stacked.png)
-![Stacked OpenImages](docs/docs_imgs_results/result_openimages_stacked.png)
-![Stacked Wikipedia](docs/docs_imgs_results/result_wikipedia_stacked.png)
+![Stacked Article Shot](docs/docs_imgs_results/result_article_shot_stacked.png)
