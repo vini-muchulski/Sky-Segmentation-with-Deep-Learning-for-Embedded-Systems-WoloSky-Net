@@ -1,11 +1,10 @@
 ﻿import cv2
 import numpy as np
-import torch
 import onnxruntime as ort
 from tqdm import tqdm
 
 # ------------------- CONFIG -------------------
-video_input_path = r"video/ufsc_video.mp4"
+video_input_path = r"inference/video/ufsc_video.mp4"
 
 model_path = r"weights/v2_Wolosky_U2Net_Sam3_320x320_infer.onnx"
 

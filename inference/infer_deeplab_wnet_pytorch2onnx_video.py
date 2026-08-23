@@ -1,5 +1,4 @@
-﻿import torch
-import onnxruntime as ort
+﻿import onnxruntime as ort
 import numpy as np
 from pathlib import Path
 import cv2
@@ -7,7 +6,7 @@ from tqdm import tqdm
 
 # ------------------- CONFIG -------------------
 
-video_path = r"video/ufsc_video.mp4"
+video_path  = r"inference/video/ufsc_video.mp4"
 
 model_path = r"weights/Sky_Unet_DeepLab_v1_MobileNetv2_infer.onnx"
 
