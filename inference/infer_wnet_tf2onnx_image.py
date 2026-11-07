@@ -15,7 +15,7 @@ IMG_SZ = (224, 224)
 #IMG_SZ = (160, 160)
 
 
-model_path = r"weights/v2_W-Net_U2Net_Sam3_320x320_infer.onnx"
+model_path = r"weights/Wolosky_Net.onnx"
 
 
 onnx_model_path  = Path(model_path)
