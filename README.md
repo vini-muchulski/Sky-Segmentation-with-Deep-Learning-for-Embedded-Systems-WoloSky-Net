@@ -1,3 +1,13 @@
+---
+library_name: onnx
+pipeline_tag: image-segmentation
+tags:
+  - sky-segmentation
+  - onnx
+  - tflite
+  - woloskynet
+---
+
 # Sky Segmentation for Embedded Systems
 
 ## Results
