@@ -1,5 +1,35 @@
 # Sky Segmentation for Embedded Systems
 
+## Results
+
+Images are stored in `docs/docs_imgs_results`:
+
+![Stacked Article Shot](docs/docs_imgs_results/result_article_shot_stacked.png)
+
+## Quick start
+
+Create and activate a virtual environment, then install the dependencies:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate    # Linux/macOS (Windows: .venv\Scripts\activate)
+pip install -r requirements.txt
+```
+
+Run the single-image WNet inference:
+
+```bash
+python inference/infer_wnet_tf2onnx_image.py
+```
+
+Run the DeepLab image inference:
+
+```bash
+python inference/infer_deeplab_wnet_pytorch2onnx_image.py
+```
+
+Both scripts process one image. Edit `image_input_path` and `model_path` at the top of the script before running. For the WNet model, use `weights/Wolosky_Net.onnx`.
+
 ## Overview
 
 In this repository, WNet refers to WoloskyNet.
@@ -47,33 +77,3 @@ The training notebook uses a 70% training, 15% validation and 15% test split wit
 - `weights/Wolosky_Net.onnx`
 - `weights/Sky_Unet_DeepLab_v1_MobileNetv2_infer.onnx`
 - `weights/Sky_Unet_DeepLab_v2_Resnet34_infer.onnx`
-
-## Quick start
-
-Create and activate a virtual environment, then install the dependencies:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate    # Linux/macOS (Windows: .venv\Scripts\activate)
-pip install -r requirements.txt
-```
-
-Run the single-image WNet inference:
-
-```bash
-python inference/infer_wnet_tf2onnx_image.py
-```
-
-Run the DeepLab image inference:
-
-```bash
-python inference/infer_deeplab_wnet_pytorch2onnx_image.py
-```
-
-Both scripts process one image. Edit `image_input_path` and `model_path` at the top of the script before running. For the WNet model, use `weights/Wolosky_Net.onnx`.
-
-## Results
-
-Images are stored in `docs/docs_imgs_results`:
-
-![Stacked Article Shot](docs/docs_imgs_results/result_article_shot_stacked.png)
